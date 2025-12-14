@@ -1,10 +1,5 @@
-#top {
-    position: sticky;
-    top: 0px;
-    background-color: rgb(255, 234, 75);
-    border-radius: 20px;
+#title {
     text-align: center;
-    border: 2px solid rgb(0, 0, 0);
 }
 
 table {
@@ -24,6 +19,10 @@ caption {
 canvas {
     width: 40vw !important;
     height: 40vw !important;
+}
+
+body
+{
 }
 
 thead,
@@ -58,20 +57,32 @@ tfoot td {
     height: 0px;
     font-size: 0px;
     border: 0px;
-    display: none;
+    display: none !important;
 }
 
-.roundButton
-{
-    border-radius: 20px;
-    width: 100px;
-}
+
 
 #addObservation
 {
     position: absolute;
     right: 5vw;
     bottom: 5vh;
+}
+
+@keyframes slide {
+    from
+    {
+        bottom: -200px;
+    }
+    to
+    {
+        bottom: 0px;
+    }
+}
+
+.formShow
+{
+    animation: slide 1s;
 }
 
 form {
@@ -126,6 +137,30 @@ textarea {
 }
 
 button {
-    margin-left: 0.5em;
-    margin-top: 0.5em;
+    cursor:pointer;
+    border: 1px solid #999;
+}
+
+#settings
+{
+    background-color: white;
+    padding: 15px;
+    display: inline-block;
+    text-align: center;
+    border: 1px #999 solid;
+    list-style-type: none; 
+}
+
+#formButton
+{
+    margin-top: 10px;
+}
+
+.settingsButton
+{
+    background-color: rgb(255, 255, 255);
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;    
+    width: 100px;
 }

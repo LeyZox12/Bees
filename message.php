@@ -1,5 +1,6 @@
 <?php
-$sql = new mysqli("localhost", "root", "", "ruches");
+  require_once __DIR__ .'/config.php';
+  $sql = new mysqli(HOST_NAME, DB_NAME, DB_PW, "ruches");
 if($sql->connect_error)
 {
   die("Connection échouée:".$sql->connect_error);
@@ -20,5 +21,5 @@ if ($sql->query($query) == TRUE) {
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
-header("Location: /index.php?scroll=".$_GET["scroll"]);
+header("Location: ruche.php?rId=".$_GET["rId"]);
 ?>
