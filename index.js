@@ -13,6 +13,8 @@ let maxInner = document.getElementById("maxTempérature interne").innerHTML;
 let minOuter = document.getElementById("minTempérature externe").innerHTML;
 let maxOuter = document.getElementById("maxTempérature externe").innerHTML;
 
+
+
 document.getElementById("title").innerHTML += params.get("rId")[params.get("rId").length-1];
 
 window.scrollTo(0, params.get("scroll"));
@@ -132,22 +134,6 @@ function toggleForm(){
     }
 }
 
-function onAlertClick()
-{
-    if(alert.hasAttribute("class"))
-        alert.removeAttribute("class");
-    else 
-        alert.setAttribute("class", "hidden");
-}
-
-function onSettingsClick()
-{
-    if(settings.hasAttribute("class"))
-        settings.removeAttribute("class");
-    else 
-        settings.setAttribute("class", "hidden");
-}
-
 function onMassModify()
 {
     modify("Masse");
@@ -176,3 +162,30 @@ function modify(name)
     maxv = window.prompt(name + " Maximale:");
     window.location.replace("modify.php?rId="+document.getElementById("rId").innerHTML+"&id=" + name + "&min=" + minv + "&max=" + maxv); 
 }
+
+function deleteAlerts()
+{
+    window.confirm("Les alertes qui ne sont plus pertinentes seront supprimés");
+    window.location = "deleteAlerts.php?rId=" + params.get("rId");
+}
+
+function changeValue()
+{
+    switch(document.getElementById("vals").value)
+    {
+        case("mass"):
+            showMass();
+            break;
+        case("humid"):
+            showHumid();
+            break;
+        case("temp_int"):
+            showIntTemp();
+            break;
+        case("temp_ext"):
+            showExtTemp();
+            break;
+    }
+}
+
+showMass();

@@ -25,6 +25,40 @@ body
 {
 }
 
+#mainBox
+{
+    display: inline;
+}
+
+.alert
+{
+    border: 1px tomato solid;
+    border-radius: 15px;
+    width: fit-content;
+    padding: 15px;
+}
+
+.seenAlert
+{
+    text-decoration: line-through;
+    border: 1px #999 dotted;
+    background-color: #bcbcbc;
+    border-radius: 15px;
+    width: fit-content;
+    padding: 15px;
+}
+
+
+#alerts{
+    border: #999 1px solid;
+    right: 1vw;
+    position: absolute;
+    top:1vh;
+    width: 30vw;
+    height: 25vh;
+    overflow: auto;
+}
+
 thead,
 tfoot {
     background-color: rgb(228 240 245);
@@ -64,9 +98,10 @@ tfoot td {
 
 #addObservation
 {
-    position: absolute;
+    position: fixed;
     right: 5vw;
     bottom: 5vh;
+
 }
 
 @keyframes slide {
@@ -133,7 +168,6 @@ textarea {
 }
 
 .button {
-    padding-left: 90px;
 }
 
 button {
@@ -144,6 +178,9 @@ button {
 #settings
 {
     background-color: white;
+    position: absolute;
+    right: 1vw;
+    top: 30vh;
     padding: 15px;
     display: inline-block;
     text-align: center;

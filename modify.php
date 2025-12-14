@@ -3,15 +3,15 @@
 $name = $_GET["id"];
 $minv = $_GET["min"];
 $maxv = $_GET["max"];
-//if($minv == null || $maxv == null)
-//  header("Location: ruche.php?rId=".$_GET["rId"]);
+if($minv == null || $maxv == null)
+  header("Location: ruche.php?rId=".$_GET["rId"]);
 $sql = new mysqli("localhost", "root", "", "ruches");
   if ($sql->connect_error) {
     die("Connection échouée:" . $sql->connect_error);
   }
-  $requete = "UPDATE limites SET `minLim`=". $minv .", `maxLim`=".$maxv." where `alias` ="."'".$name."'";
+  $requete = "UPDATE limites SET `minLim`=". $minv .", `maxLim`=".$maxv." where `alias` ="."'".$name."' AND nom_ruche = '".$_GET["rId"]."'";
   echo $requete;
   $result = $sql->query($requete);
-  header("Location: ruche.php?rId=".$_GET["rId"]);
+  header("Location: deleteAlerts.php?rId=".$_GET["rId"]);
 
 ?>
